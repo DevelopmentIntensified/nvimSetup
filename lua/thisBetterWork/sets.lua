@@ -62,4 +62,3 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 --vim.o.colorcolumn = "80"
-
