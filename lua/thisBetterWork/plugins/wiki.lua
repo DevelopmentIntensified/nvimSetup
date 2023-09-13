@@ -6,11 +6,11 @@ return {
     opts = {
         {
             name = "work",
-            path = "/home/username/wiki_1"
+            path = "C:\\Users\\MIRP\\development\\work\\wiki"
         },
         {
             name = "personal",
-            path = "/home/username/wiki_2"
+            path = "C:\\Users\\MIRP\\development\\personal\\wiki"
         }
     },
     keys = {
