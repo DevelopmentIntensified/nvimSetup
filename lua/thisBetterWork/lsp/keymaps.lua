@@ -43,9 +43,9 @@ return function(client, bufnr)
 
   LSPRemaps('<leader>fb', vim.cmd.Format, 'Format Buffer')
 
-  print("hi", client)
+  -- print("hi", client)
   if client.resolved_capabilities.completion then
     lsp_completion.on_attach(client, bufnr)
-    print(client)
+    -- print(client)
   end
 end
