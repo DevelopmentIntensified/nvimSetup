@@ -3,6 +3,24 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.wrap = false
+
+-- [[ Setting options ]]
+-- See `:help vim.o`
+-- NOTE: You can change these options as you wish!
+
+-- Set highlight on search
+vim.o.hlsearch = false
+
+-- Make line numbers default
+vim.wo.number = true
+
+-- enable mouse mode
+--vim.o.mouse = 'a'
+
 vim.opt.shellslash = true
 
 -- Sync clipboard between OS and Neovim.
@@ -22,7 +40,7 @@ vim.opt.expandtab = true
 -- Indents
 vim.opt.smartindent = true
 
---Search
+-- Search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
@@ -38,7 +56,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 50
--- vim.o.timeoutlen = 300
+vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
