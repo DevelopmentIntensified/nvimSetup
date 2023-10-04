@@ -7,14 +7,14 @@
 --   end
 -- }
 --
-return {
-  -- Theme inspired by Atom
-  'navarasu/onedark.nvim',
-  priority = 1000,
-  config = function()
-vim.cmd.colorscheme 'onedark'
-  end,
-}
+-- return {
+--   -- Theme inspired by Atom
+--   'navarasu/onedark.nvim',
+--   priority = 1000,
+--   config = function()
+    -- vim.cmd.colorscheme 'onedark'
+--   end,
+-- }
 
 -- return {
 --   "folke/tokyonight.nvim",
@@ -29,21 +29,12 @@ vim.cmd.colorscheme 'onedark'
 --   end,
 -- }
 --
--- return {
---   'uloco/bluloco.nvim',
---   lazy = false,
---   priority = 1000,
---   dependencies = { 'rktjmp/lush.nvim' },
---   config = function()
---     vim.cmd.colorscheme 'bluloco'
---   end,
--- }
-
--- return {
---   'Alexis12119/nightly.nvim',
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd.colorscheme 'nightly'
---   end,
--- }
+return {
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+    vim.cmd.colorscheme 'bluloco'
+  end,
+}

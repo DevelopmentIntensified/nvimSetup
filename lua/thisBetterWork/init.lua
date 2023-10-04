@@ -3,7 +3,7 @@ require("thisBetterWork.lazy")
 require("thisBetterWork.lsp")
 require("thisBetterWork.remaps")
 for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config') .. '/lua/thisBetterWork/remaps', [[v:val =~ '\.lua$']])) do
-  require('thisBetterWork.remaps.' .. file:gsub('%.lua$', ''))
+    require('thisBetterWork.remaps.' .. file:gsub('%.lua$', ''))
 end
 
 -- [[ Highlight on yank ]]

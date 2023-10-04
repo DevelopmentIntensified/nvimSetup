@@ -1,4 +1,5 @@
-return function(_, bufnr)
+-- local lsp_completion = require("nvim-cmp")
+return function(client, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
@@ -41,4 +42,10 @@ return function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   LSPRemaps('<leader>fb', vim.cmd.Format, 'Format Buffer')
+
+  -- print("hi", client)
+  if client.resolved_capabilities.completion then
+    lsp_completion.on_attach(client, bufnr)
+    -- print(client)
+  end
 end
