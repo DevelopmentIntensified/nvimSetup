@@ -1,5 +1,5 @@
 local on_attach = require("thisBetterWork.lsp.keymaps")
-local servers =  require("thisBetterWork.lsp.servers")
+local servers = require("thisBetterWork.lsp.servers")
 require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -28,7 +28,9 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+-- require('luasnip.loaders.from_vscode').lazy_load()
+-- load snippets from path/of/your/nvim/config/my-cool-snippets
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~AppData/Local/nvim/snippets/////////" } })
 luasnip.config.setup {}
 
 cmp.setup {
@@ -74,4 +76,3 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
