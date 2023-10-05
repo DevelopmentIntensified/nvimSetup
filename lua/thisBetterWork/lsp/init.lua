@@ -16,7 +16,7 @@ mason_lspconfig.setup {
 mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
-      cmd = { "vscode-css-language-server", "--stdio" },
+      -- cmd = { "vscode-css-language-server", "--stdio" },
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
@@ -28,9 +28,9 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
--- require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
 -- load snippets from path/of/your/nvim/config/my-cool-snippets
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~AppData/Local/nvim/snippets/////////" } })
+-- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~AppData/Local/nvim/snippets/" } })
 luasnip.config.setup {}
 
 cmp.setup {

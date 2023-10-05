@@ -4,7 +4,7 @@ return {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
-  cssls = {},
+  -- cssls = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   lua_ls = {
     Lua = {
