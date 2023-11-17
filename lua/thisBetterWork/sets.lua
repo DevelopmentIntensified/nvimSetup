@@ -3,8 +3,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
-vim.opt.shellslash = true
+-- vim.opt.shellslash = true
 vim.opt.relativenumber = true
+vim.opt.nu = true
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
