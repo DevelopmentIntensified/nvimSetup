@@ -3,7 +3,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
--- vim.opt.shellslash = true
+if vim.fn.has("macunix") == false then
+  vim.opt.shellslash = true
+end
 vim.opt.relativenumber = true
 vim.opt.nu = true
 -- Sync clipboard between OS and Neovim.
