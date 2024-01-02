@@ -1,3 +1,15 @@
+local path = ""
+local slash = "\\"
+local suffix = "\\wiki"
+if vim.loop.os_uname().sysname == "Linux" then
+    path = "~/wiki/"
+    slash = "/"
+    suffix = ""
+else
+    path = "C:\\Users\\MIRP\\development\\"
+end
+
+print(path)
 return {
     'serenevoid/kiwi.nvim',
     dependencies = {
@@ -6,11 +18,11 @@ return {
     opts = {
         {
             name = "work",
-            path = "C:\\Users\\MIRP\\development\\work\\wiki"
+            path = path.."work"..suffix
         },
         {
             name = "personal",
-            path = "C:\\Users\\MIRP\\development\\personal\\wiki"
+            path = path.."personal"..suffix
         }
     },
     keys = {
