@@ -20,7 +20,7 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-'theprimeagen/harpoon',
+-- 'theprimeagen/harpoon',
   'mbbill/undotree',
  -- 'nvim-treesitter/playground',
  -- 'nvim-treesitter/nvim-treesitter-context',

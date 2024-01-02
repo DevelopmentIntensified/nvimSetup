@@ -4,7 +4,7 @@ vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
 if vim.fn.has("macunix") == false then
-  vim.opt.shellslash = true
+--  vim.opt.shellslash = true
 end
 vim.opt.relativenumber = true
 vim.opt.nu = true
@@ -41,7 +41,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 50
--- vim.o.timeoutlen = 300
+vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

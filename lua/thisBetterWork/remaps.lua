@@ -24,6 +24,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = 'Prime: search terms stay in the midd
 -- vim.keymap.set("n", "<leader>svwm", function()
 --     require("vim-with-me").StopVimWithMe()
 -- end)
+--
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]],
@@ -51,11 +52,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prime: Quick fix 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Prime: replace instances of the word you are on" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "turn bash script into executable" })
-if vim.fn.has("macunix") == true then
+
   vim.keymap.set("n", "<leader>jtc", "<cmd>e ~/.config/nvim/lua/thisBetterWork/init.lua<CR>",
     { desc = "Prime: jump to config file" });
-else
-  vim.keymap.set("n", "<leader>jtc", "<cmd>e C:\\Users\\MIRP\\AppData\\Local\\nvim\\lua\\thisBetterWork\\init.lua<CR>",
-    { desc = "Prime: jump to config file" });
-end
 -- vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
