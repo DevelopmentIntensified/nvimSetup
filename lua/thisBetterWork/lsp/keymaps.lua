@@ -14,7 +14,7 @@ return function(client, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  LSPRemaps('<leader>rn', vim.lsp.buf.rename, 'Re[n]ame')
+  LSPRemaps('<leader>rn', vim.lsp.buf.rename, 'Rename')
   LSPRemaps('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
 
   LSPRemaps('gd', vim.lsp.buf.definition, 'Goto Definition')

@@ -6,6 +6,7 @@ vim.g.nofsync = true
 if vim.fn.has("macunix") == false then
   vim.opt.shellslash = true
 end
+
 vim.opt.relativenumber = true
 vim.opt.nu = true
 -- Sync clipboard between OS and Neovim.
@@ -15,9 +16,10 @@ vim.opt.nu = true
 
 -- enable break indent
 vim.o.breakindent = true
+vim.opt.wrap = false
 
 -- Save undo history
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -48,4 +50,5 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+vim.opt.isfname:append("@-@")
 --vim.o.colorcolumn = "80"

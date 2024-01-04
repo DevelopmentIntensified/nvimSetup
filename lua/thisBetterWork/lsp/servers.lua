@@ -3,8 +3,8 @@ return {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
-  -- cssls = {},
+  tsserver = {},
+  cssls = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   lua_ls = {
     Lua = {
