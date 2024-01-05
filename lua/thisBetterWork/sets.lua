@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
-if vim.fn.has("macunix") == false then
+if not vim.loop.os_uname().sysname == "Linux" then
   vim.opt.shellslash = true
 end
 

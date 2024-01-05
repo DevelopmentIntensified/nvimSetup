@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prime: Quick fix 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Prime: replace instances of the word you are on" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "turn bash script into executable" })
-if vim.fn.has("macunix") == true then
+if vim.loop.os_uname().sysname == "Linux" then
   vim.keymap.set("n", "<leader>jtc", "<cmd>e ~/.config/nvim/lua/thisBetterWork/init.lua<CR>",
     { desc = "Prime: jump to config file" });
 else
