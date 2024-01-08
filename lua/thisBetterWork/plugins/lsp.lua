@@ -32,5 +32,6 @@ return { {
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
     },
   } }
