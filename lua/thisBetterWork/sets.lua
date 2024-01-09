@@ -3,8 +3,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
-if vim.fn.has("macunix") == false then
+if vim.fn.has("macunix") == true then
   vim.opt.shellslash = true
+  print(vim.opt.shellslash)
 end
 vim.opt.relativenumber = true
 vim.opt.nu = true
