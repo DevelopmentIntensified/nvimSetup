@@ -3,8 +3,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nofsync = true
 
-if not vim.loop.os_uname().sysname == "Linux" then
+if vim.loop.os_uname().sysname == "Linux" then
   vim.opt.shellslash = true
+  else
+vim.opt.shell = "powershell"
 end
 
 vim.opt.relativenumber = true
@@ -16,7 +18,7 @@ vim.opt.nu = true
 
 -- enable break indent
 vim.o.breakindent = true
-vim.opt.wrap = false
+vim.opt.wrap = true 
 
 -- Save undo history
 vim.opt.tabstop = 2
