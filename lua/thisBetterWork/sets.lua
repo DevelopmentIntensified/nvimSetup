@@ -5,8 +5,8 @@ vim.g.nofsync = true
 
 if vim.loop.os_uname().sysname == "Linux" then
   vim.opt.shellslash = true
-  else
-vim.opt.shell = "powershell"
+else
+  vim.opt.shell = "powershell"
 end
 
 vim.opt.relativenumber = true
@@ -16,9 +16,9 @@ vim.opt.nu = true
 --  See `:help 'clipboard'`
 -- vim.o.clipboard = 'unnamedplus'
 
--- enable break indent
+-- enable break inden:
 vim.o.breakindent = true
-vim.opt.wrap = true 
+vim.opt.wrap = true
 
 -- Save undo history
 vim.opt.tabstop = 2
@@ -54,3 +54,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 vim.opt.isfname:append("@-@")
 --vim.o.colorcolumn = "80"
+
+vim.wo.foldlevel = 99
+vim.wo.conceallevel = 2
