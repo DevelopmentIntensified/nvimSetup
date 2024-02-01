@@ -6,7 +6,7 @@ vim.keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true, desc = "no map
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Prime: remap for word wrap" })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Prime: remap for word wrap" })
 
-vim.keymap.set('n', '<leader>fv', vim.cmd.Ex, { desc = 'File View' })
+-- vim.keymap.set('n', '<leader>fv', vim.cmd.Ex, { desc = 'File View' })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Prime: remap for moving a line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Prime: remap for moving a line up" })
@@ -51,13 +51,8 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prime: Quick fix 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Prime: replace instances of the word you are on" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "turn bash script into executable" })
-if vim.loop.os_uname().sysname == "Linux" then
-  vim.keymap.set("n", "<leader>jtc", "<cmd>e ~/.config/nvim/lua/thisBetterWork/init.lua<CR>",
+vim.keymap.set("n", "<leader>jtc", "<cmd>e " .. vim.fn.stdpath("config") .. "<CR>",
     { desc = "Prime: jump to config file" });
-else
-  vim.keymap.set("n", "<leader>jtc", "<cmd>e C:\\Users\\MIRP\\AppData\\Local\\nvim\\lua\\thisBetterWork\\init.lua<CR>",
-    { desc = "Prime: jump to config file" });
-end
 -- vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- I caved...
