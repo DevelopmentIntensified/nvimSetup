@@ -4,19 +4,19 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     "SalOrak/whaler",
-    {
-      {
-        "kdheepak/lazygit.nvim",
-        dependencies = {
-          "nvim-telescope/telescope.nvim",
-          "nvim-lua/plenary.nvim"
-        },
-        config = function()
-          require("telescope").load_extension("lazygit")
-          vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "lazygit: open lazygit" })
-        end,
-      },
-    },
+    -- {
+    --   {
+    --     "kdheepak/lazygit.nvim",
+    --     dependencies = {
+    --       "nvim-telescope/telescope.nvim",
+    --       "nvim-lua/plenary.nvim"
+    --     },
+    --     config = function()
+    --       require("telescope").load_extension("lazygit")
+    --       vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "lazygit: open lazygit" })
+    --     end,
+    --   },
+    -- },
     -- Fuzzy Finder Algorithm which requires local dependencies to be built.
     -- Only load if `make` is available. Make sure you have the system
     -- requirements installed.
