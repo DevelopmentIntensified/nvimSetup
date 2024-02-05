@@ -55,5 +55,7 @@ vim.o.termguicolors = true
 vim.opt.isfname:append("@-@")
 --vim.o.colorcolumn = "80"
 
-vim.wo.foldlevel = 99
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldlevel = 20
 vim.wo.conceallevel = 2

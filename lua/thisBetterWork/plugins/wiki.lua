@@ -1,38 +1,81 @@
 local path = ""
 local suffix = "\\wiki"
 -- if vim.loop.os_uname().sysname == "Linux" then
-    path = "~/wiki/"
-    suffix = ""
-    return {
-        {
-            "nvim-neorg/neorg",
-            build = ":Neorg sync-parsers",
-            -- tag = "*",
-            dependencies = { "nvim-lua/plenary.nvim" },
-            config = function()
-                require("neorg").setup {
-                    load = {
-                        ["core.defaults"] = {},  -- Loads default behaviour
-                        ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                        ["core.dirman"] = {      -- Manages Neorg workspaces
-                            config = {
-                                workspaces = {
-                                    work = path .. "work" .. suffix,
-                                    personal = path .. "personal" .. suffix
-                                },
-                                default_workspace = "work",
+path = "~/wiki/"
+suffix = ""
+return {
+    {
+        'dimfeld/section-wordcount.nvim',
+        config = function()
+            require('section-wordcount').setup()
+            local markdownGroup = vim.api.nvim_create_augroup('markdown', {})
+
+            vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+                group = markdownGroup,
+                pattern = '*.md',
+                callback = function()
+                    vim.opt_local.spell = true
+                    vim.opt_local.formatoptions:append 't'
+                end,
+            })
+
+            vim.api.nvim_create_autocmd('FileType', {
+                group = markdownGroup,
+                pattern = 'markdown',
+                callback = function()
+                    require('section-wordcount').wordcounter({})
+                end
+            })
+
+            local norgGroup = vim.api.nvim_create_augroup('markdown', {})
+
+            vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+                group = norgGroup,
+                pattern = '*.norg',
+                callback = function()
+                    vim.opt_local.spell = true
+                    vim.opt_local.formatoptions:append 't'
+                end,
+            })
+
+            vim.api.nvim_create_autocmd('FileType', {
+                group = norgGroup,
+                pattern = 'neorg',
+                callback = function()
+                    require('section-wordcount').wordcounter({})
+                end
+            })
+        end
+    },
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        -- tag = "*",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},  -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = {      -- Manages Neorg workspaces
+                        config = {
+                            workspaces = {
+                                work = path .. "work" .. suffix,
+                                personal = path .. "personal" .. suffix
                             },
+                            default_workspace = "work",
                         },
-                        ["core.keybinds"] = {
-                        }
                     },
-                }
-                vim.keymap.set("n", "<leader>ww", "<cmd>Neorg workspace work<cr>", { desc = "Neorg: Jump to Work workspace" })
-                vim.keymap.set("n", "<leader>wp", "<cmd>Neorg workspace personal<cr>",
-                    { desc = "Neorg: Jump to Personal workspace" })
-            end,
-        },
-    }
+                    ["core.keybinds"] = {
+                    }
+                },
+            }
+            vim.keymap.set("n", "<leader>ww", "<cmd>Neorg workspace work<cr>", { desc = "Neorg: Jump to Work workspace" })
+            vim.keymap.set("n", "<leader>wp", "<cmd>Neorg workspace personal<cr>",
+                { desc = "Neorg: Jump to Personal workspace" })
+        end,
+    },
+}
 -- else
 --     path = "C:\\Users\\MIRP\\development\\"
 --

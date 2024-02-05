@@ -43,24 +43,19 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "Prime: no Q loop" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- vim.keymap.set("n", "<lear>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Prime: Quick fix list navigation next" })
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Prime: Quick fix list navigation prev" })
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Prime: Quick fix list navigation next" })
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prime: Quick fix list navigation prev" })
+vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz", { desc = "Prime: Quick fix list navigation next" })
+vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz", { desc = "Prime: Quick fix list navigation prev" })
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Prime: Quick fix list navigation next" })
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prime: Quick fix list navigation prev" })
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Prime: replace instances of the word you are on" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "turn bash script into executable" })
 vim.keymap.set("n", "<leader>jtc", "<cmd>e " .. vim.fn.stdpath("config") .. "<CR>",
-    { desc = "Prime: jump to config file" });
+  { desc = "Prime: jump to config file" });
 -- vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- I caved...
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 --navigation between windows
-vim.keymap.set({'n', 't', 'i'}, '<A-h>', '<CMD>NavigatorLeft<CR>')
-vim.keymap.set({'n', 't', 'i'}, '<A-l>', '<CMD>NavigatorRight<CR>')
-vim.keymap.set({'n', 't', 'i'}, '<A-k>', '<CMD>NavigatorUp<CR>')
-vim.keymap.set({'n', 't', 'i'}, '<A-j>', '<CMD>NavigatorDown<CR>')
-vim.keymap.set({'n', 't', 'i'}, '<A-p>', '<CMD>NavigatorPrevious<CR>')
