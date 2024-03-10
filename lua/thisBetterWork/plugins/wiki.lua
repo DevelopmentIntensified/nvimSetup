@@ -61,10 +61,16 @@ return {
                         config = {
                             workspaces = {
                                 work = path .. "work" .. suffix,
-                                personal = path .. "personal" .. suffix
+                                personal = path .. "personal" .. suffix,
+                                blogs = path .. "personal" .. suffix .. "/blogs",
                             },
                             default_workspace = "work",
                         },
+                    },
+                    ["core.journal"] = {
+                        config = {
+                            strategy = "nested",
+                        }
                     },
                     ["core.keybinds"] = {
                     }
