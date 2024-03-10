@@ -72,6 +72,7 @@ return {
     }
 
     pcall(require("telescope").load_extension, "whaler")
+    pcall(require('telescope').load_extension, 'ui-select')
 
     vim.keymap.set("n", "<leader>cw", function()
       local w = telescope.extensions.whaler.whaler
