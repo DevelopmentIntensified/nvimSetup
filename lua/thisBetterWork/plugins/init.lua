@@ -5,7 +5,10 @@
 return {
   -- {
   --   "ActivityWatch/aw-watcher-vim",
-  --   build = ":AWStart"
+  --   build = ":AWStart",
+  --   init = function()
+  --     vim.g.aw_hostname = "RoadWarrior"
+  --   end,
   -- },
   {
     "folke/persistence.nvim",
@@ -27,7 +30,7 @@ return {
       vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
     end,
   },
-  'mhinz/vim-startify',
+  -- 'mhinz/vim-startify',
   {
     "laytan/cloak.nvim",
     init = function()

@@ -81,7 +81,7 @@ return {
       else
         w(
           {
-            directories = { home .. "\\development\\personal", { path = home .. "\\development\\work\\automated-tests", alias = "work" }, --[[ { path = "path/to/yet/another/dir", alias = "yet" } ]] },
+            directories = { home .. "\\development\\personal", { path = home .. "\\development\\work\\automated-tests", alias = "work" }, { path = home .. "\\development\\filterlink", alias = "filterlink" }--[[ { path = "path/to/yet/another/dir", alias = "yet" } ]] },
           }
         )
       end
