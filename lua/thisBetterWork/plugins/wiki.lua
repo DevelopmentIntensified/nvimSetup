@@ -5,6 +5,11 @@ path = "~/wiki/"
 suffix = ""
 return {
     {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+    },
+    {
         'dimfeld/section-wordcount.nvim',
         config = function()
             require('section-wordcount').setup()
@@ -51,7 +56,7 @@ return {
         "nvim-neorg/neorg",
         build = ":Neorg sync-parsers",
         -- tag = "*",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = { "luarocks.nvim" },
         config = function()
             require("neorg").setup {
                 load = {
